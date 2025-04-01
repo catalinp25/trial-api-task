@@ -1,0 +1,15 @@
+fastapi==0.115.12
+uvicorn==0.34.0
+pydantic==2.11.1
+sqlalchemy==2.0.40
+psycopg==3.2.6
+redis==5.2.1
+celery==5.5.0
+python-dotenv==1.1.0
+pytest==8.3.5
+databases==0.9.0
+asyncpg==0.30.0
+pydantic-settings==2.8.1
+aiohttp
+groq
+# bittensor
