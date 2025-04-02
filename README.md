@@ -43,6 +43,8 @@ requirements.txt          # Python dependencies
 ### Environment Variables
 
 Create a `.env` file with your credentials defined in `.env.example`
+    API_KEY=YourSecretApiKey
+    API_KEY_HEADER=X-API-Key
 
 ### Running with Docker
 
