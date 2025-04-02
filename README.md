@@ -44,8 +44,11 @@ requirements.txt          # Python dependencies
 
 Create a `.env` file with your credentials defined in `.env.example`
 
+### Running with Docker
 
-### Running the Application
+docker compose build && docker compose up
+
+### Running without using Docker
 
 First, create a venv: `python -m venv my-env`
 
@@ -59,7 +62,6 @@ and,
 ```bash
 celery -A src.celery_worker.celery_app worker --loglevel=info --pool=threads
 ```
-
 
 ## Running pytest
 ```bash
