@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # FastAPI application
+  app:
+    build: .
+    container_name: bittensor_app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+      - db
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    networks:
+      - bittensor_network
+
+  # PostgreSQL database
+  db:
+    image: postgres:13
+    container_name: bittensor_db
+    env_file:
+      - .env
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - bittensor_network
+
+  # Redis for caching and Celery message broker
+  redis:
+    image: redis:6
+    container_name: redis
+    networks:
+      - bittensor_network
+
+
+networks:
+  bittensor_network:
+    driver: bridge
+
+volumes:
+  db_data:
+    driver: local
